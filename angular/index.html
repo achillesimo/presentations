@@ -1,0 +1,288 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>ANGULAR</title>
+		<link rel="icon" type="image/x-icon" href="/resources/images/icons/favicon.ico">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/theme/league.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section class="slide">
+					<img src="img/angular-icon-1.svg" alt="logo angular" class="logo" />
+					<p>Angular <span class="strike">2</span></p>
+
+					<aside class="notes">
+						<p>Interpolation permet l'affichage de données, des variables et de faire des opérations</p>
+					</aside>
+				</section>
+				<section class="slide">
+							<p>Angular 1 est la première version du framework.</p>
+							<p>
+								L'idée est l'ameliorer le HTML, en créant ses propres balises via des DIRECTIVES
+							</p>
+				</section>
+				<section class="slide">
+							<p>Angular [2] est réécriture complète d'Angular 1, profite de TYPESCRIPT.</p>
+							<p>Une application Angular [2] un ensemble ce composants</p>
+				</section>
+				<section class="slide">
+							<p>Angular[4] est la mise à jour d'Angular[2]</p>
+							<p>L'idée est de l'aligner les dépendances d'angular sur une même version</p>
+				</section>
+				<section class="slide">
+					<p class="text-left">Semantic versioning</p>
+					<p class="text-left">
+						Patch: 1.5.<span class="text-danger">5</span> <br />
+						Aucune fonctionnalité, Aucun changement majeur
+					</p>
+					<p class="text-left">
+						Mineur: 1.<span class="text-danger">6.0</span> <br />
+						Nouvelle fonctionnalité, Aucun changement majeur
+					</p>
+					<p class="text-left">
+						Majeur: <span class="text-danger">2.0.0</span> <br />
+						Nouvelle fonctionnalité, Potentiels changements majeurs
+					</p>
+				</section>
+				<section class="slide">
+					<h1 class="title upper">Les web components</h1>
+				</section>
+				<section class="slide">
+					<section>
+						<div>Les composants web permettent aux développeurs de créer des balises HTML personnalisées et réutilisables.</div>
+						<br />
+						<div class="text-left">Les composants web s'appuient sur :</div>
+						<br />
+						<ul>
+							<li class="fragment fade-in">
+								<b>Custom Elements</b>: pour créer et enregistrer des balises HTML
+							</li><br />
+							<li class="fragment fade-in">
+								<b>Shadow DOM </b>: attributs public ou privé des éléments,
+							</li>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li>
+								<b>HTML imports</b>: CSS, JavaScript, ...
+							</li><br />
+							<li class="fragment fade-in">
+								<b>Templates </b>: squelettes pour des éléments HTML instanciables
+							</li>
+						</ul>
+					</section>
+				</section>
+				<section class="slide">
+					<h1 class="title upper">les outils</h1>
+				</section>
+				<section class="slide text-center">
+							<img src="img/node.png" alt="logo angular" class="logo" />
+						
+				</section>
+				<section class="slide  text-center">
+					<img src="img/cli-logo.svg" alt="logo angular" class="logo" />
+				</section>
+				<section class="slide">
+					Une application ANGULAR est grossomodo
+					<p></p>
+					<ul>
+						<li class="fragment fade-in">
+							<p>Un ensemble de modules</p>
+						</li>
+						<li class="fragment fade-in"><p>Un ensemble de composants ...</p></li>
+						<li class="fragment fade-in"><p>... qui gèrent des templates</p></li>
+						<li class="fragment fade-in"><p>Des services injectables</p></li>
+						<li class="fragment fade-in"><p>Des directives</p></li>
+					</ul>
+				</section>
+				<section class="slide">
+					<h1 class="title upper">Les composants</h1>
+				</section>
+				<section class="slide">
+					<p>
+						Création :
+						<pre>
+							<code data-trim data-noescape>ng g component components/graph</code>
+						</pre>
+					</p>
+
+					<div class="fragment fade-in">
+						<pre class="text-left">
+							<code data-trim data-noescape>
+								import { Component, OnInit } from '@angular/core';
+								@Component({
+								  selector: 'app-graph',
+								  templateUrl: './graph.component.html',
+								  styleUrls: ['./graph.component.css']
+								})
+								export class GraphComponent implements OnInit {
+								  constructor() { }
+								  ngOnInit() {
+								  }
+								}
+							</code>
+						</pre>
+					</div>
+
+				</section>
+
+				<section class="slide">
+					<ul>
+						<li class="">
+							Composant
+							<pre class="text-center"><code data-trim data-noescape>ng g c new-component</code></pre>
+						</li>
+						<li class="fragment fade-in">
+							Classe <pre class="text-center"><code data-trim data-noescape>ng g cl new-class</code></pre>
+						</li>
+						<li class="fragment fade-in">
+							Directive
+							<pre class="text-center"><code data-trim data-noescape>ng g d new-directive</code></pre>
+						</li>
+						<li class="fragment fade-in" style="width: 600px">
+							Enum
+							<pre class="text-center"><code data-trim data-noescape>ng g e new-enum</code></pre>
+						</li>
+
+					</ul>
+				</section>
+				<section class="slide">
+					<ul>
+						<li>
+							Module
+							<pre class="text-center"><code data-trim data-noescape>ng g m new-module</code></pre>
+						</li>
+						<li class="fragment fade-in">
+							Pipe <pre class="text-center"><code data-trim data-noescape>ng g p new-pipe</code></pre>
+						</li>
+						<li class="fragment fade-in" style="width: 600px">
+							Service
+							<pre class="text-center"><code data-trim data-noescape>ng g s new-service</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section class="slide">
+					<h1 class="title upper">DATA BIDING</h1>
+				</section>
+				<section class="slide">
+					<div>
+						<p>Interpolation</p>
+
+						<pre>
+							<code class="hljs hljs html" data-trim data-noescape>
+								{{ nomVariable }}
+							</code>
+						</pre>
+						<pre class="fragment fade-in">
+							<code class="hljs hljs html" data-trim>
+							 	{{ 1 + 1 }}
+							</code>
+						</pre>
+						<pre class="fragment fade-in">
+							<code class="hljs hljs html" data-trim>
+							 	 {{ 'Votre email ' + email}}
+							</code>
+						</pre>
+					</div>
+					<aside class="notes">
+						<p>Interpolation permet l'affichage de données, des variables et de faire des opérations</p>
+					</aside>
+				</section>
+
+				<section class="slide">
+					<h1 class="title upper">Templates</h1>
+				</section>
+				<section class="slide">
+					<p>Condition</p>
+					<pre class="text-left">
+						<code data-trim class="html">
+							  <p *ngIf="user.civ === 1; then male else female"></p>
+							  <ng-template #male>Monsieur</ng-template>
+							  <ng-template #female>Madame</ng-template>
+						</code>
+					</pre>
+				</section>
+				<section class="slide">
+					<p>Switch Case</p>
+					<pre class="text-left">
+						<code data-trim class="html">
+							<div [ngSwitch]="user.job">
+								 <p *ngSwitchCase="1">Informaticien</p>
+								 <p *ngSwitchCase="2">Commercial</p>
+								 <p *ngSwitchCase="3">ARH</p>
+								 <p *ngSwitchDefault>Autre</p>
+							</div>
+						</code>
+					</pre>
+				</section>
+				<section class="slide">
+					<p>Boucle</p>
+					<pre class="text-left">
+						<code data-trim class="html">
+							<table>
+								<tbody>
+									 <tr *ngFor="let user of users" >
+										 <td class="text-center">
+											 {{user.email | lowercase}}
+										 </td>
+									 </tr>
+								</tbody>
+							</table>
+						</code>
+					</pre>
+				</section>
+				<section class="slide">
+					<h1 class="title upper">DEMO</h1>
+				</section>
+				<section class="slide">
+					<h1 class="title upper">ROADMAP</h1>
+				</section>
+				<section class="slide">
+					<p class="text-left">Angular 5 : Septembre/ Octobre 2017</p>
+					<p class="text-left">Angular 6 : Mars 2018</p>
+					<p class="text-left">Angular 7 : Septembre/ Octobre 2018</p>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
